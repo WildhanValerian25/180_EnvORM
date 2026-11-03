@@ -5,3 +5,6 @@ import KomikRoute from './routes/KomikRoute.js';
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
+
+// Middleware untuk membaca JSON dari request body
+app.use(express.json());
