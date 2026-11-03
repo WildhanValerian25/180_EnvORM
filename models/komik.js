@@ -18,3 +18,5 @@ const Komik = db.define('komik', {
 }, {
     freezeTableName: true
 });
+
+export default Komik;
