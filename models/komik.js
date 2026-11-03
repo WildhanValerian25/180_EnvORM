@@ -1,22 +1,20 @@
-import { Sequelize } from 'sequelize';
-import db from '../config/config.js'; // Sesuaikan jalur jika file config ada di tempat lain
-
-const { DataTypes } = Sequelize;
-
-const Komik = db.define('komik', {
-    title: {
-        type: DataTypes.STRING,
-        allowNull: false
+module.exports = (sequelize, DataTypes) => {
+  const Komik = sequelize.define('Komik', {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    judul: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     description: {
-        type: DataTypes.TEXT
+      type: DataTypes.STRING,
     },
     author: {
-        type: DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.STRING,
     }
-}, {
-    freezeTableName: true
-});
-
-export default Komik;
+  });
+  return Komik;
+};
